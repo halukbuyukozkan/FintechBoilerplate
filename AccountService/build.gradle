@@ -4,15 +4,23 @@ plugins {
 }
 
 dependencies {
+    compileOnly "org.projectlombok:lombok:1.18.42"
+    annotationProcessor "org.projectlombok:lombok:1.18.42"
+
     implementation libs.springBootWeb
     implementation libs.springBootActuator
     implementation libs.springCloudEurekaClient
     implementation libs.springCloudConfigClient
     implementation "org.springframework.cloud:spring-cloud-starter-config"
 
+    implementation libs.postgreSql
+    implementation libs.springBootDataJpa
+    implementation libs.keycloakAdminClient
+    implementation libs.redisCache
     implementation libs.log4jApi
     implementation libs.log4jCore
     implementation libs.log4jSlf4jImpl
+    implementation project(':GlobalExceptionHandlerLib')
 }
 
 dependencyManagement {

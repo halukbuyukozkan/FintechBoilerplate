@@ -1,0 +1,23 @@
+# Build outputs
+build/
+bin/
+out/
+.gradle/
+
+# IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# Git metadata
+.git/
+
+# OS / temp files
+.DS_Store
+*.log
+*.tmp
+*.bak
+*.swp
+*~
