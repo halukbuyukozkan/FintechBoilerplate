@@ -1,1 +1,3 @@
 rootProject.name = 'FintechBoilerplate'
+
+include 'GlobalExceptionHandlerLib'

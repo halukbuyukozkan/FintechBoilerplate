@@ -1,30 +1,34 @@
 plugins {
-    id 'org.springframework.boot' version '3.0.13' apply false
-    id 'io.spring.dependency-management' version '1.1.4' apply false
+    id 'java'
+    id 'java-library'
 }
 
-apply from: 'dependencies.gradle'
+ext {
+    versions = [
+            springBoot: '3.0.13'
+    ]
+
+    libs = [
+            springBootWeb: "org.springframework.boot:spring-boot-starter-web:${versions.springBoot}"
+    ]
+}
 
 allprojects {
     group = 'com.buyukozkan'
     version = '1.0.0'
-}
-
-subprojects {
-    apply plugin: 'java'
-    apply plugin: 'org.springframework.boot'
-    apply plugin: 'io.spring.dependency-management'
-
-    sourceCompatibility = ext.versions.java
-    targetCompatibility = ext.versions.java
 
     repositories {
         mavenCentral()
     }
+}
 
-    dependencyManagement {
-        imports {
-            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${versions.springCloud}"
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'java-library'
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(21)
         }
     }
 }
