@@ -1,0 +1,14 @@
+ext {
+    versions = [
+            java       : "21",
+            springBoot : "3.0.13",
+            springCloud: "4.0.0"
+    ]
+
+    libs = [
+            springBootWeb      : "org.springframework.boot:spring-boot-starter-web:${versions.springBoot}",
+            springBootActuator : "org.springframework.boot:spring-boot-starter-actuator:${versions.springBoot}",
+            springCloudEureka  : "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:${versions.springCloud}",
+            springCloudConfig  : "org.springframework.cloud:spring-cloud-starter-config:${versions.springCloud}"
+    ]
+}
