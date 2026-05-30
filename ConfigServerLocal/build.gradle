@@ -6,8 +6,9 @@ plugins {
 dependencies {
     implementation libs.springBootWeb
     implementation libs.springBootActuator
-    implementation libs.springCloudEurekaServer
-    implementation libs.springCloudAdminStarterServer
+    implementation libs.springCloudConfigServer
+    implementation libs.springCloudEurekaClient
+
     implementation libs.log4jApi
     implementation libs.log4jCore
     implementation libs.log4jSlf4jImpl

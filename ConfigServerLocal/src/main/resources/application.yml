@@ -1,0 +1,44 @@
+server:
+  port: 8888
+
+spring:
+  config:
+    import: optional:file:.env,optional:file:../.env
+  application:
+    name: config-server-application
+  profiles:
+    active: native
+  cloud:
+    client:
+      hostname: ${EUREKA_INSTANCE_HOSTNAME:localhost}
+      ip-address: ${SPRING_CLOUD_CLIENT_IP_ADDRESS:127.0.0.1}
+    inetutils:
+      default-hostname: ${EUREKA_INSTANCE_HOSTNAME:localhost}
+      default-ip-address: 127.0.0.1
+      use-only-site-local-interfaces: false
+    config:
+      server:
+        native:
+          search-locations: classpath:/config-repo
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE:http://127.0.0.1:8761/eureka/}
+  instance:
+    hostname: ${EUREKA_INSTANCE_HOSTNAME:localhost}
+    instance-id: ${EUREKA_INSTANCE_INSTANCE_ID:${EUREKA_INSTANCE_HOSTNAME:localhost}:${spring.application.name}:${server.port}}
+    prefer-ip-address: ${EUREKA_INSTANCE_PREFER_IP_ADDRESS:false}
+    non-secure-port: ${server.port}
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 90
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

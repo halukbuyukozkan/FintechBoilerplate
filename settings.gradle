@@ -2,3 +2,4 @@ rootProject.name = 'FintechBoilerplate'
 
 include 'GlobalExceptionHandlerLib'
 include 'DashboardEurekaServer'
+include 'ConfigServerLocal'
