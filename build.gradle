@@ -5,11 +5,21 @@ plugins {
 
 ext {
     versions = [
-            springBoot: '3.0.13'
+            springBoot: '3.0.13',
+            springCloud: '4.0.0',
+            log4j      : '2.20.0'
     ]
 
     libs = [
-            springBootWeb: "org.springframework.boot:spring-boot-starter-web:${versions.springBoot}"
+            springBootWeb: "org.springframework.boot:spring-boot-starter-web:${versions.springBoot}",
+            springCloudEurekaServer      : "org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:${versions.springCloud}",
+            springCloudAdminStarterServer: 'de.codecentric:spring-boot-admin-starter-server:3.2.2',
+            springBootActuator            : "org.springframework.boot:spring-boot-starter-actuator:$versions.springBoot",
+
+            // Log4j
+            log4jApi                     : "org.apache.logging.log4j:log4j-api:$versions.log4j",
+            log4jCore                    : "org.apache.logging.log4j:log4j-core:$versions.log4j",
+            log4jSlf4jImpl               : "org.apache.logging.log4j:log4j-slf4j-impl:$versions.log4j"
     ]
 }
 
