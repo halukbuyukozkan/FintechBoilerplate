@@ -1,0 +1,10 @@
+server:
+  port: 9591
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE:http://127.0.0.1:8761/eureka/}
+  instance:
+    hostname: ${EUREKA_INSTANCE_HOSTNAME:localhost}
+    prefer-ip-address: ${EUREKA_INSTANCE_PREFER_IP_ADDRESS:false}

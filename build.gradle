@@ -15,6 +15,7 @@ ext {
             springCloudEurekaServer      : "org.springframework.cloud:spring-cloud-starter-netflix-eureka-server",
             springCloudAdminStarterServer: 'de.codecentric:spring-boot-admin-starter-server:3.2.2',
             springBootActuator            : "org.springframework.boot:spring-boot-starter-actuator:$versions.springBoot",
+            springCloudConfigClient  : "org.springframework.cloud:spring-cloud-config-client",
             springCloudConfigServer  : "org.springframework.cloud:spring-cloud-config-server",
             springCloudEurekaClient  : "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client",
 
