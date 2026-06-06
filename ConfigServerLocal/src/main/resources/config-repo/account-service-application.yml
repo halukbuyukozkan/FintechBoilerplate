@@ -17,3 +17,13 @@ eureka:
   instance:
     hostname: ${EUREKA_INSTANCE_HOSTNAME:localhost}
     prefer-ip-address: ${EUREKA_INSTANCE_PREFER_IP_ADDRESS:false}
+
+
+keycloak:
+  server-url: ${KEYCLOAK_SERVER_URL:http://${KEYCLOAK_HOST:127.0.0.1}:8180}
+  realm: master
+  admin-username: ${KEYCLOAK_ADMIN:admin}
+  admin-password: ${KEYCLOAK_ADMIN_PASSWORD:admin}
+  token-url: ${KEYCLOAK_SERVER_URL:http://${KEYCLOAK_HOST:127.0.0.1}:8180}/realms/master/protocol/openid-connect/token
+  client-id: account-service
+  client-secret: ${KEYCLOAK_CLIENT_SECRET:admin}
