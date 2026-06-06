@@ -16,10 +16,10 @@ import org.springframework.data.annotation.LastModifiedDate;
 public class BaseEntity {
 
     @CreatedDate
-    Long createdAt;
+    Long createAt;
 
     @LastModifiedDate
-    Long updatedAt;
+    Long updateAt;
 
     boolean state;
 }

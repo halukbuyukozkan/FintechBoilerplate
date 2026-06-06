@@ -1,6 +1,15 @@
 server:
   port: 9591
 
+spring:
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST:127.0.0.1}:${POSTGRES_PORT:9999}/${POSTGRES_DB:Micro_AccountServiceDB}
+    username: ${POSTGRES_USER:fintech}
+    password: ${POSTGRES_PASSWORD:fintech123}
+  jpa:
+    hibernate:
+      ddl-auto: update
+
 eureka:
   client:
     service-url:
